@@ -1,0 +1,62 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="500" fill="white" />
+  
+  <style>
+    .box { fill: white; stroke: #333; stroke-width: 2; }
+    .dashed { stroke-dasharray: 5,5; }
+    .text-main { font-family: Arial, sans-serif; font-size: 14px; font-weight: bold; fill: black; text-anchor: middle; }
+    .text-sub { font-family: Arial, sans-serif; font-size: 12px; fill: #444; text-anchor: middle; }
+    .arrow { fill: none; stroke: #333; stroke-width: 2; marker-end: url(#arrowhead); }
+  </style>
+
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333" />
+    </marker>
+  </defs>
+
+  <rect x="250" y="20" width="300" height="60" class="box" />
+  <text x="400" y="45" class="text-main">[1] Peripheral Controller / ADC Data Stream</text>
+  <text x="400" y="65" class="text-sub">ADC sampling of raw potentiometer voltage</text>
+
+  <rect x="300" y="140" width="200" height="70" class="box" />
+  <text x="400" y="165" class="text-main">[2] Signal Processing Engine</text>
+  <text x="400" y="185" class="text-sub">Receives audio and control data.</text>
+  <text x="400" y="200" class="text-sub">Applies real-time IIR filters.</text>
+
+  <rect x="300" y="260" width="200" height="70" class="box" />
+  <text x="400" y="285" class="text-main">[3] Async Task Executor</text>
+  <text x="400" y="305" class="text-sub">Schedules concurrent I/O, UI,</text>
+  <text x="400" y="320" class="text-sub">and graphics tasks.</text>
+
+  <rect x="20" y="120" width="200" height="80" class="box" />
+  <text x="120" y="145" class="text-main">[4] Peripheral Controller</text>
+  <text x="120" y="165" class="text-main">/ Audio Output</text>
+  <text x="120" y="185" class="text-sub">Streams audio via I2S to DAC/Amp.</text>
+
+  <rect x="20" y="270" width="200" height="70" class="box" />
+  <text x="120" y="295" class="text-main">[5] UI Synchronization Layer</text>
+  <text x="120" y="315" class="text-sub">Asynchronously maps knobs</text>
+  <text x="120" y="330" class="text-sub">to filter coefficients.</text>
+
+  <rect x="580" y="280" width="200" height="80" class="box" />
+  <text x="680" y="305" class="text-main">[6] Graphics Pipeline</text>
+  <text x="680" y="325" class="text-sub">Asynchronously draws waveform</text>
+  <text x="680" y="340" class="text-sub">to OLED and text to LCD.</text>
+
+  <rect x="300" y="410" width="300" height="60" class="box dashed" />
+  <text x="450" y="435" class="text-main">[7] Power System</text>
+  <text x="450" y="455" class="text-sub">Powers MCU, audio, and visual peripherals.</text>
+
+  <line x1="400" y1="80" x2="400" y2="130" class="arrow" />
+  <line x1="400" y1="210" x2="400" y2="250" class="arrow" />
+  
+  <path d="M 300 295 L 230 295" class="arrow" />
+  <path d="M 300 175 L 230 175" class="arrow" />
+  <path d="M 500 295 L 570 295" class="arrow" />
+  <path d="M 680 280 L 680 200 L 510 200" class="arrow" />
+  
+  <line x1="320" y1="410" x2="220" y2="340" class="arrow" />
+  <line x1="380" y1="410" x2="380" y2="330" class="arrow" />
+  <line x1="550" y1="410" x2="650" y2="360" class="arrow" />
+</svg>
